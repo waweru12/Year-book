@@ -12,7 +12,7 @@
       <div class="col-md-12">
           <div class="card" >
               <div class="view overlay">
-                <img class="card-img-top" src="{{project.landing_page.url}}" alt="Card image cap">
+                <img class="card-img-top" src="{{project.upload_your_images_here.url}}" alt="Card image cap">
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -26,7 +26,6 @@
                 </div>
                
                 <p class="card-text"><strong>By</strong>: {{project.user}}</p>
-                <a href="http://{{project.live_link}}" class="white-text d-flex justify-content-end"><h5>Live site <i class="fas fa-angle-double-right"></i></h5></a>
             
               </div>
             
@@ -44,8 +43,8 @@
         <div class="col-md-2"></div>
         <div class="col-md-4">
             <div class="card border-primary">
-                <div class="card-header">Make a Vote</div>
-                <p>Note that a user can only vote once per project</p>
+                <div class="card-header">Rate class of the year</div>
+                
                 <div class="card-body text-primary">
                     <form  action="/project/{{project.id}}" method="post" enctype="multipart/form-data" id="votes-form">
                       {%csrf_token%}

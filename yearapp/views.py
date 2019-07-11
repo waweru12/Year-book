@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
-from .models import Project, Profile, Rating, categories, technologies
+from .models import Project, Profile, Rating
 from .forms import ProfileForm, UploadForm, RatingForm
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -66,10 +66,8 @@ def project(request, project_id):
         raise ObjectDoesNotExist()
 
    
-    total_design = 0
-    total_usability = 0
-    total_creativity = 0
-    total_content = 0
+   
+    total_class_of_the_year = 0
     overall_score = 0
 
     ratings = Rating.objects.filter(project=project_id)
@@ -78,24 +76,16 @@ def project(request, project_id):
     else:
         users = 1
     
-    design = list(Rating.objects.filter(project=project_id).values_list('design',flat=True))
-    usability = list(Rating.objects.filter(project=project_id).values_list('usability',flat=True))
-    creativity = list(Rating.objects.filter(project=project_id).values_list('creativity',flat=True))
-    content = list(Rating.objects.filter(project=project_id).values_list('content',flat=True))
+    class_of_the_year = list(Rating.objects.filter(project=project_id).values_list('class_of_the_year',flat=True))
+  
     
+    total_class_of_the_year=sum(class_of_the_year)/users
     
-    total_design=sum(design)/users
-    total_usability=sum(usability)/users
-    total_creativity=sum(creativity)/users
-    total_content=sum(content)/users
 
 
-    overall_score=(total_design+total_content+total_usability+total_creativity)/4
+    overall_score=(total_class_of_the_year)/1
 
-    project.design = total_design
-    project.usability = total_usability
-    project.creativity = total_creativity
-    project.content = total_content
+    project.class_of_the_year = total_class_of_the_year
     project.overall = overall_score
 
     project.save()
@@ -108,11 +98,11 @@ def project(request, project_id):
             rating.project= project
             rating.profile = profile
             if not Rating.objects.filter(profile=profile, project=project).exists():
-                rating.overall_score = (rating.design+rating.usability+rating.creativity+rating.content)/4
+                rating.overall_score = (rating.class_of_the_year)/1
                 rating.save()
     else:
         form = RatingForm()
-    return render(request, "project.html",{"project":project,"profile":profile,"ratings":ratings,"form":form, "message":message, 'total_design':total_design, 'total_usability':total_usability, 'total_creativity':total_creativity, 'total_content':total_content})
+    return render(request, "project.html",{"project":project,"profile":profile,"ratings":ratings,"form":form, "message":message, 'total_class_of_the_year':total_class_of_the_year, })
 
 @login_required(login_url='/accounts/login')
 def search(request):
