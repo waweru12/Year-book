@@ -3,7 +3,6 @@ from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
 from .models import Project, Profile, Rating, categories, technologies
 from .forms import ProfileForm, UploadForm, RatingForm
-from .permissions import IsAdminOrReadOnly
 from django.core.exceptions import ObjectDoesNotExist
 
 @login_required(login_url='/accounts/login')
