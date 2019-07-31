@@ -1,8 +1,11 @@
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color" > 
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <!--Navbar-->
+<nav class="navbar navbar-expand-lg " style="background-color:grey"> 
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="{%url 'index'%}"><img src="https://previews.123rf.com/images/asmati/asmati1706/asmati170606450/80933334-letter-a-sign-design-template-element-vector-white-icon-with-soft-shadow-on-transparent-background-.jpg" class="rounded-circle z-depth-0"
+  <a class="navbar-brand" href="{%url 'index'%}"><img src="https://images.pexels.com/photos/2408428/pexels-photo-2408428.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded-circle z-depth-0"
     alt="avatar image" height="35" width="35"></a>
 
   <!-- Collapse button -->
@@ -17,10 +20,12 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{%url 'index'%}">Home</a>
+        <a class="nav-link" href="{%url 'index'%}" style="font-family: 'Knewave', cursive; color: black; font-size: 30px;
+        ">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{%url 'post'%}">Post</a>
+        <a class="nav-link" href="{%url 'post'%}" style="font-family: 'Knewave', cursive; color:black; font-size: 30px;
+        ">Post</a>
       </li>
 
     </ul>
@@ -50,3 +55,13 @@
   <!-- Collapsible content -->
 
 </nav>
+
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  
+</div>

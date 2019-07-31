@@ -62,11 +62,8 @@
               <thead>
                 <tr>
                   <th scope="col">Username</th>
-                  <th scope="col">Design</th>
-                  <th scope="col">Usability</th>
-            
-                  <th scope="col">Creativity</th>
-                  <th scope="col">Content</th>
+                  <th scope="col">Class of the year</th>
+                 
                   <th scope="col">Overall Score</th>
                 </tr>
               </thead>
@@ -75,10 +72,8 @@
                 {% for rating in ratings%}
                 <tr>
                   <td>{{rating.profile.user}}</td>
-                  <td>{{rating.design}}</td>
-                  <td>{{rating.usability}}</td>
-                  <td>{{rating.creativity}}</td>
-                  <td>{{rating.content}}</td>
+                  <td>{{rating.class_of_the_yea}}</td>
+                  <
                   <td>{{rating.overall_score}}</td>
                 </tr>
             
@@ -89,28 +84,23 @@
                 <thead>
                   <tr>
                     <th scope="col">Avarage</th>
-                    <th scope="col">Design</th>
-                    <th scope="col">Usability</th>
-              
-                    <th scope="col">Creativity</th>
-                    <th scope="col">Content</th>
+                    <th scope="col">Class of the year</th>
+                 
                     <th scope="col">Overall Score</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Average</td>
-                    <td>{{total_design}}</td>
-                    <td>{{total_usability}}</td>
-                    <td>{{total_creativity}}</td>
-                    <td>{{total_content}}</td>
+                    <td>{{total_class_of_the_year}}</td>
+                    
                     <td>{{project.overall}}</td>
                   </tr>
 
               </tbody>
               </table>
             {%else %}
-            <h3 class="text-center">No votes made for this site yet</h3>
+
             <hr>
             {% endif %}
         </div>

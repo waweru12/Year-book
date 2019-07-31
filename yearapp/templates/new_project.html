@@ -12,9 +12,10 @@
     </div>
     <div class="col-md-4">
         <div class="card border-primary">
-            <div class="card-header">New Project</div>
+            <div class="card-header" style="font-family: 'Knewave', cursive;
+            ">New post</div>
             <div class="card-body text-primary">
-                <form  method="post" action="{%url 'post'%}" enctype="multipart/form-data">
+                <form  method="post" action="{%url 'post'%}" enctype="multipart/form-data" style="background-color:transparent">
                   {% csrf_token %}
                   {%bootstrap_form form%}
                   <div class="form-group w3-center">

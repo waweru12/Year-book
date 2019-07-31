@@ -7,7 +7,7 @@
 
 {% block content %}
 <!--Carousel Wrapper-->
-<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
   <!--Indicators-->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
@@ -19,102 +19,37 @@
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <div class="view">
-        <img class="d-block w-100"
-          src="https://images.pexels.com/photos/2365535/pexels-photo-2365535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w"
-          style='height: 100vh' alt="First slide">
-        <div class="mask rgba-black-strong"></div>
+        <img class="d-block w-100" src="https://media.giphy.com/media/3oEdv3jDLP7XcpL2Wk/giphy.gif" alt="First slide" style="height: 90vh"> 
+        <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h1 class="page-title">
-          Class of the year
-        </h1>
-        <h1 class="page-title">
-          {{top.title}}
-        </h1>
-
-        <div class="circles">
-          <div class="first circle">
-            <strong></strong>
-            <p>{{top.class_of_the_year}}/10</p>
-            <span>Best class</span>
-          </div>
-
-
-          <div class="fifth circle">
-            <strong></strong>
-            <p>{{top.overall}}/10</p>
-            <span>OVERALL</span>
-          </div>
-
-        </div>
-        <a href="/project/{{top.id}}" class="btn btn-primary">Review</a>
+        <h3 class="h3-responsive">“Life is not about how fast you run or how high you climb, but how well you bounce.”</h3>
+         
+       
       </div>
     </div>
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100"
-          src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 "
-          style='height: 100vh                        ;' alt="Second slide">
-        <div class="mask rgba-black-strong"></div>
+        <img class="d-block w-100" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/tHF1OBF/4k-happy-group-of-mature-students-on-graduation-day-pose-for-selfie-with-mobile_h1vyms4__F0000.png" alt="Second slide"  style="height: 90vh"> 
+        <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h1 class="page-title">
-          Highest Voted Project
-        </h1>
-        <h1 class="page-title">
-          {{top.title}}
-        </h1>
-
-        <div class="circles">
-          <div class="first circle">
-            <strong></strong>
-            <p>{{top.class_of_the_year}}/10</p>
-            <span>Best class</span>
-          </div>
-
-          <div class="fifth circle">
-            <strong></strong>
-            <p>{{top.overall}}/10</p>
-            <span>OVERALL</span>
-          </div>
-
-        </div>
-        <a href="/project/{{top.id}}" class="btn btn-primary">Review</a>
+        <h3 class="h3-responsive">When we embrace all that life has to offer, we can achieve success ​in both personally and professionally. </h3>
+       
       </div>
     </div>
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100"
-          src="https://images.pexels.com/photos/1184578/pexels-photo-1184578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          style='height: 100vh' alt="Third slide ">
-        <div class="mask rgba-black-strong"></div>
+        <img class="d-block w-100" src="http://wallpapercraft.website/uploads/posts/3156115-education_graduation_graduation-cap_graduation-hat_hat_master_mortarboard_oxford-cap_pet_square-academic-cap_student_university.jpg" alt="Third slide"  style="height: 90vh">
+        <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h1 class="page-title">
-          Highest ranked class
-        </h1>
-        <h1 class="page-title">
-          {{top.title}}
-        </h1>
-
-        <div class="circles">
-          <div class="first circle">
-            <strong></strong>
-            <p>{{top.class_of_the_year}}/10</p>
-            <span>Best class</span>
-          </div>
-
-
-          <div class="fifth circle">
-            <strong></strong>
-            <p>{{top.overall}}/10</p>
-            <span>OVERALL</span>
-          </div>
-
-        </div>
-        <a href="/project/{{top.id}}" class="btn btn-primary">Review</a>
+         
+        <h3 class="h3-responsive">“No one ever finds life worth living - one has to make it worth living.”</h3>
+       
+       
       </div>
     </div>
   </div>
@@ -128,8 +63,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-
+  <!--/.Controls-->
 </div>
+<!--/.Carousel Wrapper-->
 <div class="container-fluid">
   <br>
   <div class="row">
@@ -152,23 +88,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
 <script>
-  (function($) {
-
-$('.first.circle').circleProgress({
-  value: ({{top.class_of_the_year}}/10),
-  fill: {gradient: [['#0681c4', .5], ['#4ac5f8', .5]], gradientAngle: Math.PI / 4}
-}).on('circle-animation-progress', function(event, progress, stepValue) {
-  $(this).find('strong').text((stepValue.toFixed(1).substr(1)));
-});
-
-$('.fifth.circle').circleProgress({
-  value: ({{top.overall}}/10),
-  fill: {gradient: [['Indigo', .5], ['SlateBlue', .5]], gradientAngle: Math.PI / 4}
-}).on('circle-animation-progress', function(event, progress, stepValue) {
-  $(this).find('strong').text((stepValue.toFixed(1).substr(1)));
-});
-
-})(jQuery);
-</script>
-
+  
 {% endblock %}
